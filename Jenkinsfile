@@ -23,7 +23,7 @@ pipeline {
            
         stage("terraform setup"){
             steps {
-               dir("terraform323"){
+               dir("terraform-integrated"){
                    bat 'terraform init'
                    bat 'terraform plan -out=tfplan'
                    bat 'terraform apply -auto-approve tfplan'
