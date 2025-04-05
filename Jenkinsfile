@@ -15,7 +15,7 @@ pipeline {
 
         stage('Test Terraform') {
             steps {
-                  dir('terraform323') {
+                  dir('terraform-integrated') {
                       bat 'terraform --version'
                    }
             }
