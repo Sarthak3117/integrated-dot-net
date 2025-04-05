@@ -4,7 +4,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rgas" {
-  name     = resource17
+  name     = "resource17"
   location = "West Europe"
 }
 
