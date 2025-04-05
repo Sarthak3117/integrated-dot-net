@@ -17,7 +17,7 @@ pipeline {
             steps {
                   dir('terraform-integrated') {
                       bat 'terraform --version'
-                   }
+                  }
             }
         }
            
@@ -28,9 +28,8 @@ pipeline {
                    bat 'terraform plan -out=tfplan'
                    bat 'terraform apply -auto-approve tfplan'
                }
-
-            }
-        }
+            }
+        }
 
         stage('Build') {
             steps {
