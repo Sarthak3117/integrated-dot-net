@@ -13,14 +13,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                bat 'dotnet restore' // it install all nuget packages which are present in dependicies packages in vs 
-                bat 'dotnet build --configuration Release'
-                bat 'dotnet publish -c Release -o ./publish' // it create a two folder bin(final output) and obj(temporary) 
-            }
-        }
-
         stage('Test Terraform') {
             steps {
                   dir('terraform323') {
@@ -39,6 +31,14 @@ pipeline {
 
             }
         }
+
+        stage('Build') {
+            steps {
+                bat 'dotnet restore' // it install all nuget packages which are present in dependicies packages in vs 
+                bat 'dotnet build --configuration Release'
+                bat 'dotnet publish -c Release -o ./publish' // it create a two folder bin(final output) and obj(temporary) 
+            }
+        }
 
         stage('Deploy') {
             steps {
